@@ -1,0 +1,8 @@
+# @package _global_
+defaults:
+  - _self_
+  - exercises/arpeggios: arpeggios.yaml
+  - exercises/chromatics: chromatics.yaml
+  - exercises/patterns: patterns.yaml
+  - exercises/scale_intervals: scale_intervals.yaml
+  - exercises/scales: scales.yaml

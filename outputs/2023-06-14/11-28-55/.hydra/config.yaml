@@ -1,0 +1,436 @@
+test: test
+exercises:
+  arpeggios:
+    Major Triads 6-Note:
+      name: Major Triads 6-Note
+      keyed_or_chromatic: chromatic
+      number_of_notes: 6
+      notes_per_beat: 4
+      max_interval: 1
+      inversions:
+      - 0
+      - 1
+      - 2
+      invertable: true
+    Minor Triads 6-Note:
+      name: Minor Triads 6-Note
+      keyed_or_chromatic: chromatic
+      number_of_notes: 6
+      notes_per_beat: 4
+      max_interval: 1
+      inversions:
+      - 0
+      - 1
+      - 2
+      invertable: true
+    Diminished Triads 6-Note:
+      name: Diminished Triads 6-Note
+      keyed_or_chromatic: chromatic
+      number_of_notes: 6
+      notes_per_beat: 4
+      max_interval: 1
+      inversions:
+      - 0
+      - 1
+      - 2
+      invertable: true
+    Augmented Triads 6-Note:
+      name: Augmented Triads 6-Note
+      keyed_or_chromatic: chromatic
+      number_of_notes: 6
+      notes_per_beat: 4
+      max_interval: 1
+      inversions:
+      - 0
+      - 1
+      - 2
+      invertable: true
+    Suspended Triads 6-Note:
+      name: Suspended Triads 6-Note
+      keyed_or_chromatic: chromatic
+      number_of_notes: 6
+      notes_per_beat: 4
+      max_interval: 1
+      inversions:
+      - 0
+      - 1
+      - 2
+      invertable: true
+    Major 5b Triads 6-Note:
+      name: Major 5b Triads 6-Note
+      keyed_or_chromatic: chromatic
+      number_of_notes: 6
+      notes_per_beat: 4
+      max_interval: 1
+      inversions:
+      - 0
+      - 1
+      - 2
+      invertable: true
+    Major 7ths 8-Note:
+      name: Major 7ths 8-Note
+      keyed_or_chromatic: chromatic
+      number_of_notes: 8
+      notes_per_beat: 4
+      max_interval: 1
+      inversions:
+      - 0
+      - 1
+      - 2
+      - 3
+      invertable: true
+    Major 7ths b5 8-Note:
+      name: Major 7ths b5 8-Note
+      keyed_or_chromatic: chromatic
+      number_of_notes: 8
+      notes_per_beat: 4
+      max_interval: 1
+      inversions:
+      - 0
+      - 1
+      - 2
+      - 3
+      invertable: true
+    Augmented Major 7ths 8-Note:
+      name: Augmented Major 7ths 8-Note
+      keyed_or_chromatic: chromatic
+      number_of_notes: 8
+      notes_per_beat: 4
+      max_interval: 1
+      inversions:
+      - 0
+      - 1
+      - 2
+      - 3
+      invertable: true
+    7ths 8-Note:
+      name: 7ths 8-Note
+      keyed_or_chromatic: chromatic
+      number_of_notes: 8
+      notes_per_beat: 4
+      max_interval: 1
+      inversions:
+      - 0
+      - 1
+      - 2
+      - 3
+      invertable: true
+    7ths b5 8-Note:
+      name: 7ths b5 8-Note
+      keyed_or_chromatic: chromatic
+      number_of_notes: 8
+      notes_per_beat: 4
+      max_interval: 1
+      inversions:
+      - 0
+      - 1
+      - 2
+      - 3
+      invertable: true
+    '7ths #5 8-Note':
+      name: '7ths #5 8-Note'
+      keyed_or_chromatic: chromatic
+      number_of_notes: 8
+      notes_per_beat: 4
+      max_interval: 1
+      inversions:
+      - 0
+      - 1
+      - 2
+      - 3
+      invertable: true
+    Minor 7ths 8-Note:
+      name: Minor 7ths 8-Note
+      keyed_or_chromatic: chromatic
+      number_of_notes: 8
+      notes_per_beat: 4
+      max_interval: 1
+      inversions:
+      - 0
+      - 1
+      - 2
+      - 3
+      invertable: true
+    Minor Major 7ths 8-Note:
+      name: Minor Major 7ths 8-Note
+      keyed_or_chromatic: chromatic
+      number_of_notes: 8
+      notes_per_beat: 4
+      max_interval: 1
+      inversions:
+      - 0
+      - 1
+      - 2
+      - 3
+      invertable: true
+    Diminished 7ths 8-Note:
+      name: Diminished 7ths 8-Note
+      keyed_or_chromatic: chromatic
+      number_of_notes: 8
+      notes_per_beat: 4
+      max_interval: 1
+      inversions:
+      - 0
+      - 1
+      - 2
+      - 3
+      invertable: true
+    Diminished Major 7ths 8-Note:
+      name: Diminished 7ths 8-Note
+      keyed_or_chromatic: chromatic
+      number_of_notes: 8
+      notes_per_beat: 4
+      max_interval: 1
+      inversions:
+      - 0
+      - 1
+      - 2
+      - 3
+      invertable: true
+    Suspended 7ths 8-Note:
+      name: Suspended 7ths 8-Note
+      keyed_or_chromatic: chromatic
+      number_of_notes: 8
+      notes_per_beat: 4
+      max_interval: 1
+      inversions:
+      - 0
+      - 1
+      - 2
+      - 3
+      invertable: true
+  chromatics:
+    Chromatic Scale/Minor 2nds:
+      name: Chromatic Scale/Minor 2nds
+      keyed_or_chromatic: chromatic
+      number_of_notes: 2
+      notes_per_beat: 4
+      max_interval: 1
+      invertable: true
+    Chromatic Triplets:
+      name: Chromatic Triplets
+      keyed_or_chromatic: chromatic
+      number_of_notes: 3
+      notes_per_beat: 3
+      max_interval: 1
+      invertable: true
+    Minor 2nds in Major 2nds:
+      name: Chromatic Minor 2nds in Major 2nds
+      keyed_or_chromatic: chromatic
+      number_of_notes: 4
+      notes_per_beat: 4
+      max_interval: 1
+      invertable: false
+    Major 2nds:
+      name: Major 2nds
+      keyed_or_chromatic: chromatic
+      number_of_notes: 2
+      notes_per_beat: 4
+      max_interval: 2
+      invertable: true
+  patterns:
+    1-2-3-5:
+      name: 1-2-3-5
+      keyed_or_chromatic: chromatic
+      number_of_notes: 4
+      notes_per_beat: 4
+      max_interval: 2
+      invertable: true
+    1-2-b3-5:
+      name: 1-2-b3-5
+      keyed_or_chromatic: chromatic
+      number_of_notes: 4
+      notes_per_beat: 4
+      max_interval: 2
+      invertable: true
+    1-2-4-5:
+      name: 1-2-4-5
+      keyed_or_chromatic: chromatic
+      number_of_notes: 4
+      notes_per_beat: 4
+      max_interval: 2
+      invertable: true
+    1-3-4-5:
+      name: 1-3-4-5
+      keyed_or_chromatic: chromatic
+      number_of_notes: 4
+      notes_per_beat: 4
+      max_interval: 2
+      invertable: true
+    1-b3-4-5:
+      name: 1-b3-4-5
+      keyed_or_chromatic: chromatic
+      number_of_notes: 4
+      notes_per_beat: 4
+      max_interval: 2
+      invertable: true
+    b3-1-2-4-5:
+      name: b3-1-2-4-5
+      keyed_or_chromatic: chromatic
+      number_of_notes: 5
+      notes_per_beat: 5
+      max_interval: 2
+      invertable: false
+    b7-8-6-b7-5-b3-2-1:
+      name: b786b75b321
+      keyed_or_chromatic: chromatic
+      number_of_notes: 8
+      notes_per_beat: 4
+      max_interval: 2
+      invertable: false
+    5-b3-4-b7-5-b3-1:
+      name: 5-b3-4-b7-5-b3-1
+      keyed_or_chromatic: chromatic
+      number_of_notes: 7
+      notes_per_beat: 7
+      max_interval: 2
+      invertable: false
+    1-2-5:
+      name: 1-2-5
+      keyed_or_chromatic: chromatic
+      number_of_notes: 7
+      notes_per_beat: 7
+      max_interval: 2
+      invertable: true
+  scale_intervals:
+    Major 2nds:
+      name: Major 2nds
+      keyed_or_chromatic: keyed
+      key: A, Bb, B, C, Db, D, Eb, E, F, Gb, G
+      scale: diatonic
+      number_of_notes: 2
+      notes_per_beat: 4
+      max_interval: 1
+      invertable: true
+      scale_notes: 0, 2, 4, 5, 7, 9, 11
+    Melodic Minor 2nds:
+      name: Melodic Minor 2nds
+      keyed_or_chromatic: keyed
+      key: A, Bb, B, C, C#, D, Eb, E, F, F#, G
+      scale: diatonic
+      number_of_notes: 2
+      notes_per_beat: 4
+      max_interval: 1
+      invertable: true
+      scale_notes: 0, 2, 3, 5, 7, 9, 11
+    Harmonic Minor 2nds:
+      name: Harmonic Minor 2nds
+      keyed_or_chromatic: keyed
+      key: A, Bb, B, C, C#, D, Eb, E, F, F#, G
+      scale: diatonic
+      number_of_notes: 2
+      notes_per_beat: 4
+      max_interval: 1
+      invertable: true
+      scale_notes: 0, 2, 3, 5, 7, 8, 11
+    Major 3rds:
+      name: Major 3rds
+      keyed_or_chromatic: keyed
+      key: A, Bb, B, C, Db, D, Eb, E, F, Gb, G
+      scale: diatonic
+      number_of_notes: 2
+      notes_per_beat: 4
+      max_interval: 1
+      invertable: true
+      scale_notes: 0, 2, 4, 5, 7, 9, 11
+    Melodic Minor 3rds:
+      name: Melodic Minor 3rds
+      keyed_or_chromatic: keyed
+      key: A, Bb, B, C, C#, D, Eb, E, F, F#, G
+      scale: diatonic
+      number_of_notes: 2
+      notes_per_beat: 4
+      max_interval: 1
+      invertable: true
+      scale_notes: 0, 2, 3, 5, 7, 9, 11
+    Harmonic Minor 3rds:
+      name: Harmonic Minor 3rds
+      keyed_or_chromatic: keyed
+      key: A, Bb, B, C, C#, D, Eb, E, F, F#, G
+      scale: diatonic
+      number_of_notes: 2
+      notes_per_beat: 4
+      max_interval: 1
+      invertable: true
+      scale_notes: 0, 2, 3, 5, 7, 8, 11
+  scales:
+    Major:
+      name: Major
+      keyed_or_chromatic: keyed
+      key: Ab, A, Bb, B, C, Db, D, Eb, E, F, Gb, G
+      scale: diatonic
+      number_of_notes: 7
+      notes_per_beat: 4
+      max_interval: 1
+      invertable: false
+      scale_notes: 0, 2, 4, 5, 7, 9, 11
+    Melodic Minor:
+      name: Melodic Minor
+      keyed_or_chromatic: keyed
+      key: Ab, A, Bb, B, C, C#, D, Eb, E, F, F#, G
+      scale: melodic minor
+      number_of_notes: 7
+      notes_per_beat: 4
+      max_interval: 1
+      invertable: false
+      scale_notes: 0, 2, 3, 5, 7, 9, 11
+    Harmonic Minor:
+      name: Harmonic Minor
+      keyed_or_chromatic: keyed
+      key: Ab, A, Bb, B, C, C#, D, Eb, E, F, F#, G
+      scale: harmonic minor
+      number_of_notes: 7
+      notes_per_beat: 4
+      max_interval: 1
+      invertable: false
+      scale_notes: 0, 2, 3, 5, 7, 8, 11
+    Diminished:
+      name: Diminished
+      keyed_or_chromatic: keyed
+      key: Bb, B, C
+      scale: diminished
+      number_of_notes: 8
+      notes_per_beat: 4
+      max_interval: 1
+      invertable: false
+      scale_notes: 0, 2, 3, 5, 6, 8, 9, 11
+    Whole-Tone:
+      name: Whole-Tone
+      keyed_or_chromatic: keyed
+      key: Bb, B
+      scale: whole tone
+      number_of_notes: 6
+      notes_per_beat: 4
+      max_interval: 1
+      invertable: false
+      scale_notes: 0, 2, 4, 6, 8, 10
+    Pentatonic:
+      name: Pentatonic
+      keyed_or_chromatic: keyed
+      key: Ab, A, Bb, B, C, C#, D, Eb, E, F, F#, G
+      scale: Pentatonic
+      number_of_notes: 5
+      notes_per_beat: 4
+      max_interval: 1
+      invertable: false
+      scale_notes: 0, 2, 4, 7, 9
+    Japanese:
+      name: Japanese
+      keyed_or_chromatic: keyed
+      key: Ab, A, Bb, B, C, C#, D, Eb, E, F, F#, G
+      scale: japanese
+      number_of_notes: 5
+      notes_per_beat: 4
+      max_interval: 1
+      invertable: false
+      scale_notes: 0, 1, 5, 7, 8
+    Blues Scale:
+      name: Blues Scale
+      keyed_or_chromatic: keyed
+      key: Ab, A, Bb, B, C, C#, D, Eb, E, F, F#, G
+      scale: blues
+      number_of_notes: 6
+      notes_per_beat: 4
+      max_interval: 1
+      invertable: false
+      scale_notes: 0, 3, 5, 6, 7, 10

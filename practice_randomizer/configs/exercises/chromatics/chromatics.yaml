@@ -1,0 +1,35 @@
+"Chromatic Scale/Minor 2nds":
+  name: "Chromatic Scale/Minor 2nds"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 1
+  invertable: True
+
+"Chromatic Triplets":
+  name: "Chromatic Triplets"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 3
+  notes_per_beat: 3
+  max_interval: 1
+  invertable: True
+
+# Very similar to chromatic quadruplets, just with last two notes inverted
+"Minor 2nds in Major 2nds":
+  name: "Chromatic Minor 2nds in Major 2nds"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 4
+  notes_per_beat: 4
+  max_interval: 1
+  invertable: False
+
+# Very similar to chromatic quadruplets, just with last two notes inverted
+"Major 2nds":
+  name: "Major 2nds"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 2
+  invertable: True
+
+# Eventually get minor 3rds, major 3rds, 4ths, tritones, 5ths, minor 6ths, major 6ths, minor 7ths, major 7ths, octaves, etc.

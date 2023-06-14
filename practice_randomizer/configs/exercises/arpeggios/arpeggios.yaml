@@ -1,0 +1,161 @@
+"Major Triads 6-Note":
+  name: "Major Triads 6-Note"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 6
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2]
+  invertable: True
+
+"Minor Triads 6-Note":
+  name: "Minor Triads 6-Note"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 6
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2]
+  invertable: True
+
+"Diminished Triads 6-Note":
+  name: "Diminished Triads 6-Note"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 6
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2]
+  invertable: True
+
+
+"Augmented Triads 6-Note":
+  name: "Augmented Triads 6-Note"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 6
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2]
+  invertable: True
+
+"Suspended Triads 6-Note":
+  name: "Suspended Triads 6-Note"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 6
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2]
+  invertable: True
+
+"Major 5b Triads 6-Note":
+  name: "Major 5b Triads 6-Note"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 6
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2]
+  invertable: True
+
+## 7th chords:
+
+## Major
+"Major 7ths 8-Note":
+  name: "Major 7ths 8-Note"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 8
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertable: True
+
+"Major 7ths b5 8-Note":
+  name: "Major 7ths b5 8-Note"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 8
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertable: True
+
+"Augmented Major 7ths 8-Note":
+  name: "Augmented Major 7ths 8-Note"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 8
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertable: True
+
+## 7th
+"7ths 8-Note":
+  name: "7ths 8-Note"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 8
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertable: True
+
+"7ths b5 8-Note":
+  name: "7ths b5 8-Note"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 8
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertable: True
+
+"7ths #5 8-Note":
+  name: "7ths #5 8-Note"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 8
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertable: True
+
+# Minor
+"Minor 7ths 8-Note":
+  name: "Minor 7ths 8-Note"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 8
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertable: True
+
+"Minor Major 7ths 8-Note":
+  name: "Minor Major 7ths 8-Note"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 8
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertable: True
+
+# Diminished
+"Diminished 7ths 8-Note":
+  name: "Diminished 7ths 8-Note"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 8
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertable: True
+
+"Diminished Major 7ths 8-Note":
+  name: "Diminished 7ths 8-Note"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 8
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertable: True
+
+# Suspended
+"Suspended 7ths 8-Note":
+  name: "Suspended 7ths 8-Note"
+  keyed_or_chromatic: chromatic
+  number_of_notes: 8
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertable: True
+
