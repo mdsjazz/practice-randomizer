@@ -28,6 +28,7 @@
 
 "Augmented Triads 6-Note":
   name: "Augmented Triads 6-Note"
+  category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 6
   notes_per_beat: 4
@@ -37,6 +38,7 @@
 
 "Suspended Triads 6-Note":
   name: "Suspended Triads 6-Note"
+  category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 6
   notes_per_beat: 4
@@ -46,6 +48,7 @@
 
 "Major 5b Triads 6-Note":
   name: "Major 5b Triads 6-Note"
+  category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 6
   notes_per_beat: 4
@@ -58,6 +61,7 @@
 ## Major
 "Major 7ths 8-Note":
   name: "Major 7ths 8-Note"
+  category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
   notes_per_beat: 4
@@ -67,6 +71,7 @@
 
 "Major 7ths b5 8-Note":
   name: "Major 7ths b5 8-Note"
+  category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
   notes_per_beat: 4
@@ -76,6 +81,7 @@
 
 "Augmented Major 7ths 8-Note":
   name: "Augmented Major 7ths 8-Note"
+  category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
   notes_per_beat: 4
@@ -86,6 +92,7 @@
 ## 7th
 "7ths 8-Note":
   name: "7ths 8-Note"
+  category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
   notes_per_beat: 4
@@ -95,6 +102,7 @@
 
 "7ths b5 8-Note":
   name: "7ths b5 8-Note"
+  category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
   notes_per_beat: 4
@@ -104,6 +112,7 @@
 
 "7ths #5 8-Note":
   name: "7ths #5 8-Note"
+  category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
   notes_per_beat: 4
@@ -114,6 +123,7 @@
 # Minor
 "Minor 7ths 8-Note":
   name: "Minor 7ths 8-Note"
+  category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
   notes_per_beat: 4
@@ -123,6 +133,7 @@
 
 "Minor Major 7ths 8-Note":
   name: "Minor Major 7ths 8-Note"
+  category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
   notes_per_beat: 4
@@ -133,6 +144,7 @@
 # Diminished
 "Diminished 7ths 8-Note":
   name: "Diminished 7ths 8-Note"
+  category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
   notes_per_beat: 4
@@ -142,6 +154,7 @@
 
 "Diminished Major 7ths 8-Note":
   name: "Diminished 7ths 8-Note"
+  category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
   notes_per_beat: 4
@@ -152,6 +165,7 @@
 # Suspended
 "Suspended 7ths 8-Note":
   name: "Suspended 7ths 8-Note"
+  category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
   notes_per_beat: 4

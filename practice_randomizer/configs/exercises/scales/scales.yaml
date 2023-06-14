@@ -1,5 +1,6 @@
 "Major":
   name: "Major"
+  category: scales
   keyed_or_chromatic: keyed
   key: Ab, A, Bb, B, C, Db, D, Eb, E, F, Gb, G
   scale: diatonic
@@ -11,6 +12,7 @@
 
 "Melodic Minor":
   name: "Melodic Minor"
+  category: scales
   keyed_or_chromatic: keyed
   key: Ab, A, Bb, B, C, C#, D, Eb, E, F, F#, G
   scale: melodic minor
@@ -22,6 +24,7 @@
 
 "Harmonic Minor":
   name: "Harmonic Minor"
+  category: scales
   keyed_or_chromatic: keyed
   key: Ab, A, Bb, B, C, C#, D, Eb, E, F, F#, G
   scale: harmonic minor
@@ -34,6 +37,7 @@
 
 "Diminished":
   name: "Diminished"
+  category: scales
   keyed_or_chromatic: keyed
   key: Bb, B, C
   scale: diminished
@@ -45,6 +49,7 @@
 
 "Whole-Tone":
   name: "Whole-Tone"
+  category: scales
   keyed_or_chromatic: keyed
   key: Bb, B
   scale: whole tone
@@ -56,6 +61,7 @@
 
 "Pentatonic":
   name: "Pentatonic"
+  category: scales
   keyed_or_chromatic: keyed
   key: Ab, A, Bb, B, C, C#, D, Eb, E, F, F#, G
   scale: Pentatonic
@@ -67,6 +73,7 @@
 
 "Japanese":
   name: "Japanese"
+  category: scales
   keyed_or_chromatic: keyed
   key: Ab, A, Bb, B, C, C#, D, Eb, E, F, F#, G
   scale: japanese
@@ -78,6 +85,7 @@
 
 "Blues Scale":
   name: "Blues Scale"
+  category: scales
   keyed_or_chromatic: keyed
   key: Ab, A, Bb, B, C, C#, D, Eb, E, F, F#, G
   scale: blues

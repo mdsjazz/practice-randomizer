@@ -1,5 +1,6 @@
 "Chromatic Scale/Minor 2nds":
   name: "Chromatic Scale/Minor 2nds"
+  category: chromatics
   keyed_or_chromatic: chromatic
   number_of_notes: 2
   notes_per_beat: 4
@@ -8,6 +9,7 @@
 
 "Chromatic Triplets":
   name: "Chromatic Triplets"
+  category: chromatics
   keyed_or_chromatic: chromatic
   number_of_notes: 3
   notes_per_beat: 3
@@ -17,6 +19,7 @@
 # Very similar to chromatic quadruplets, just with last two notes inverted
 "Minor 2nds in Major 2nds":
   name: "Chromatic Minor 2nds in Major 2nds"
+  category: chromatics
   keyed_or_chromatic: chromatic
   number_of_notes: 4
   notes_per_beat: 4
@@ -26,6 +29,7 @@
 # Very similar to chromatic quadruplets, just with last two notes inverted
 "Major 2nds":
   name: "Major 2nds"
+  category: chromatics
   keyed_or_chromatic: chromatic
   number_of_notes: 2
   notes_per_beat: 4

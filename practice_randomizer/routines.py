@@ -1,4 +1,5 @@
 import json
+import os
 import random
 from typing import List
 
@@ -23,6 +24,7 @@ class Exercise:
     def __init__(
         self,
         name: str = "",
+        category: str = "",
         keyed_or_chromatic: str = "chromatic",
         number_of_notes: int = 0,
         notes_per_beat: int = 0,
@@ -58,7 +60,7 @@ class Exercise:
         )
 
     def __str__(self):
-        exercise_str =  f"{self.name}, start on {self.starting_note}, displace by {self.displacement}, offset by {self.offset}, articulate as {self.articulation}"
+        exercise_str =  f"{self.category}: {self.name}, start on {self.starting_note}, displace by {self.displacement}, offset by {self.offset}, articulate as {self.articulation}"
         if self.inversions:
             exercise_str += f", {self.inversions} inversion"
         if self.inverted:
@@ -90,20 +92,28 @@ class Exercise:
 
 class Routine:
 
-    def __init__(self, choice: str, state_file: dict = None):
+    def __init__(self, choice: str, replacement: bool = False):
 
-        if state_file is None:
-            with open(f"./routine_states/{choice}/state.yaml", "w", encoding="UTF-8") as routine_state_fp:
-                json.dump(routine_state_fp, {})
+        routine_config_name = f"{choice}.yaml"
+        routine_state_rel_path = f"./routine_states/{choice}/state.json"
 
-        initialize(version_base=1.2, config_path="routines")
-        exercises_hydra = compose(config_name=choice)
-        self.exercises = OmegaConf.to_container(exercises_hydra, resolved=True)
+        if not os.path.exists(routine_state_rel_path):
+            with open(routine_state_rel_path, "w", encoding="UTF-8") as routine_state_fp:
+                json.dump({}, routine_state_fp)
 
-        self.state_file = state_file
-        with open(state_file, "r", encoding="UTF-8") as state_fp:
-            self.state = json.dump(state_fp)
+        initialize(version_base="1.2", config_path="configs")
+        exercises_hydra = compose(config_name=routine_config_name)
+        self.routine_config = OmegaConf.to_container(exercises_hydra, resolve=True)
 
+        self.exercises_templates = [
+            exercise_config for exercise_group_config in self.routine_config["exercises"].values() for exercise_config in exercise_group_config.values()
+        ]
+
+        with open(routine_state_rel_path, "r", encoding="UTF-8") as routine_state_fp:
+            self.state = json.load(routine_state_fp)
+
+        import pdb
+        pdb.set_trace()
         self.unpracticed_exercises = [
             exercise for exercise in self.exercises if exercise["practiced"]
         ]

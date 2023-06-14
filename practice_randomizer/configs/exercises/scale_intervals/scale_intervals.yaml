@@ -1,5 +1,6 @@
 "Major 2nds":
   name: "Major 2nds"
+  category: scale intervals
   keyed_or_chromatic: keyed
   key: A, Bb, B, C, Db, D, Eb, E, F, Gb, G
   scale: diatonic
@@ -11,6 +12,7 @@
 
 "Melodic Minor 2nds":
   name: "Melodic Minor 2nds"
+  category: scale intervals
   keyed_or_chromatic: keyed
   key: A, Bb, B, C, C#, D, Eb, E, F, F#, G
   scale: diatonic
@@ -22,6 +24,7 @@
 
 "Harmonic Minor 2nds":
   name: "Harmonic Minor 2nds"
+  category: scale intervals
   keyed_or_chromatic: keyed
   key: A, Bb, B, C, C#, D, Eb, E, F, F#, G
   scale: diatonic
@@ -33,6 +36,7 @@
 
 "Major 3rds":
   name: "Major 3rds"
+  category: scale intervals
   keyed_or_chromatic: keyed
   key: A, Bb, B, C, Db, D, Eb, E, F, Gb, G
   scale: diatonic
@@ -44,6 +48,7 @@
 
 "Melodic Minor 3rds":
   name: "Melodic Minor 3rds"
+  category: scale intervals
   keyed_or_chromatic: keyed
   key: A, Bb, B, C, C#, D, Eb, E, F, F#, G
   scale: diatonic
@@ -55,6 +60,7 @@
 
 "Harmonic Minor 3rds":
   name: "Harmonic Minor 3rds"
+  category: scale intervals
   keyed_or_chromatic: keyed
   key: A, Bb, B, C, C#, D, Eb, E, F, F#, G
   scale: diatonic
