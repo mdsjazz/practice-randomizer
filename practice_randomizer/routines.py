@@ -1,5 +1,6 @@
 import json
 import os
+import numpy as np
 import random
 from typing import List
 
@@ -7,6 +8,7 @@ from hydra import compose, initialize
 from omegaconf import DictConfig, OmegaConf
 
 from practice_randomizer.randomizer import (
+    NOTE_TO_INT_MAP,
     randomize_starting_note,
     randomize_interval,
     randomize_displacement,
@@ -31,10 +33,11 @@ class Exercise:
         max_interval: int = 1,
         inversions: List = None,
         invertible: bool = False,
+        **kwargs
     ):
 
         self.name = name
-
+        self.category = category
         self.keyed_or_chromatic = keyed_or_chromatic
         self.number_of_notes = number_of_notes
         self.notes_per_beat = notes_per_beat
@@ -60,7 +63,13 @@ class Exercise:
         )
 
     def __str__(self):
-        exercise_str =  f"{self.category}: {self.name}, start on {self.starting_note}, displace by {self.displacement}, offset by {self.offset}, articulate as {self.articulation}"
+        exercise_str =  f"""
+        {self.category}:
+            {self.name},
+            start on {self.starting_note},
+            displace by {self.displacement},
+            offset by {self.offset},
+            articulate as {self.articulation}"""
         if self.inversions:
             exercise_str += f", {self.inversions} inversion"
         if self.inverted:
@@ -89,6 +98,18 @@ class Exercise:
 
         return (starting_note, interval, displacement, offset, articulation, inversion, inverted)
 
+    def list_all_mandatory_combinations(self):
+
+        all_keys = list(NOTE_TO_INT_MAP.keys()) if self.keyed_or_chromatic == "keyed" else ["NA"]
+        all_intervals = list(range(1, self.max_interval + 1))
+        all_inversions = self.inversions
+        all_invertibles = ["up", "down", "up-down", "down-up"] if self.invertible else ["NA"]
+
+        mandatory_params = (all_keys, all_intervals, all_inversions, all_invertibles)
+
+        return np.array(np.meshgrid(*mandatory_params)).reshape(-1, len(mandatory_params))
+
+
 
 class Routine:
 
@@ -105,28 +126,24 @@ class Routine:
         exercises_hydra = compose(config_name=routine_config_name)
         self.routine_config = OmegaConf.to_container(exercises_hydra, resolve=True)
 
-        self.exercises_templates = [
-            exercise_config for exercise_group_config in self.routine_config["exercises"].values() for exercise_config in exercise_group_config.values()
-        ]
+        self.exercises_templates = {
+            exercise_name: exercise_config for exercise_group_config in self.routine_config["exercises"].values() for exercise_name, exercise_config in exercise_group_config.items()
+        }
 
         with open(routine_state_rel_path, "r", encoding="UTF-8") as routine_state_fp:
             self.state = json.load(routine_state_fp)
 
-        import pdb
-        pdb.set_trace()
-        self.unpracticed_exercises = [
-            exercise for exercise in self.exercises if exercise["practiced"]
-        ]
+        self.unpracticed_exercises_templates = ["hi"]
 
     def choose_exercise(self):
-        return random.choice(self.unpracticed_exercises)
-    
+        return random.choice(list(self.exercises_templates.keys()))
+
     def update(self, exercise_id: int, rating: float = None):
         self.state[exercise_id]["practiced"] = True
         if rating is not None:
             self.state[exercise_id]["rating"] = rating
         del self.unpracticed_exercises[exercise_id]
-    
+
     def save_state(self):
         pass
 
@@ -134,7 +151,7 @@ class Routine:
         try:
             while self.unpracticed_exercises:
                 exercise_id = self.choose_exercise()
-                exercise = Exercise(**self.exercises[exercise_id])
+                exercise = Exercise(**self.exercises_templates[exercise_id])
 
                 print(exercise)
                 rating = input("Please press any key for the next exercise. Input a rating if you wish.")
