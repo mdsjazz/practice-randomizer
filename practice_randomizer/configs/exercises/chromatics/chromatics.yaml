@@ -5,7 +5,7 @@
   number_of_notes: 2
   notes_per_beat: 4
   max_interval: 1
-  invertable: True
+  invertible: True
 
 "Chromatic Triplets":
   name: "Chromatic Triplets"
@@ -14,7 +14,7 @@
   number_of_notes: 3
   notes_per_beat: 3
   max_interval: 1
-  invertable: True
+  invertible: True
 
 # Very similar to chromatic quadruplets, just with last two notes inverted
 "Minor 2nds in Major 2nds":
@@ -24,7 +24,7 @@
   number_of_notes: 4
   notes_per_beat: 4
   max_interval: 1
-  invertable: False
+  invertible: False
 
 # Very similar to chromatic quadruplets, just with last two notes inverted
 "Major 2nds":
@@ -34,6 +34,6 @@
   number_of_notes: 2
   notes_per_beat: 4
   max_interval: 1
-  invertable: True
+  invertible: True
 
 # Eventually get minor 3rds, major 3rds, 4ths, tritones, 5ths, minor 6ths, major 6ths, minor 7ths, major 7ths, octaves, etc.

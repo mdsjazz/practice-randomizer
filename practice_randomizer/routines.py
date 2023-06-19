@@ -1,6 +1,6 @@
+import itertools
 import json
 import os
-import numpy as np
 import random
 from typing import List
 
@@ -10,6 +10,7 @@ from omegaconf import DictConfig, OmegaConf
 from practice_randomizer.randomizer import (
     NOTE_TO_INT_MAP,
     randomize_starting_note,
+    randomize_key,
     randomize_interval,
     randomize_displacement,
     randomize_offset,
@@ -33,6 +34,10 @@ class Exercise:
         max_interval: int = 1,
         inversions: List = None,
         invertible: bool = False,
+        key: str = None,
+        interval: int = None,
+        inversion: int = None,
+        inverted: str = None,
         **kwargs
     ):
 
@@ -44,6 +49,10 @@ class Exercise:
         self.max_interval = max_interval
         self.inversions = inversions
         self.invertible = invertible
+        self.key = key
+        self.interval = interval
+        self.inversion = inversion
+        self.inverted = inverted
 
         (
             self.starting_note,
@@ -51,7 +60,7 @@ class Exercise:
             self.displacement,
             self.offset,
             self.articulation,
-            self.inversions,
+            self.inversion,
             self.inverted,
         ) = self.return_randomized_exercise(
             keyed_or_chromatic=self.keyed_or_chromatic,
@@ -74,6 +83,7 @@ class Exercise:
             exercise_str += f", {self.inversions} inversion"
         if self.inverted:
             exercise_str += f", {self.inverted}"
+        exercise_str += "\n"
         return exercise_str
 
     def __repr__(self):
@@ -89,6 +99,7 @@ class Exercise:
         invertible: bool,
     ):
         starting_note = randomize_starting_note(keyed_or_chromatic=keyed_or_chromatic)
+        key = randomize_key() if keyed_or_chromatic else None
         interval = randomize_interval(max_interval=max_interval)
         displacement = randomize_displacement(number_of_notes=number_of_notes)
         offset = randomize_offset(notes_per_beat=notes_per_beat)
@@ -99,16 +110,19 @@ class Exercise:
         return (starting_note, interval, displacement, offset, articulation, inversion, inverted)
 
     def list_all_mandatory_combinations(self):
-
         all_keys = list(NOTE_TO_INT_MAP.keys()) if self.keyed_or_chromatic == "keyed" else ["NA"]
         all_intervals = list(range(1, self.max_interval + 1))
-        all_inversions = self.inversions
-        all_invertibles = ["up", "down", "up-down", "down-up"] if self.invertible else ["NA"]
+        all_inversions = self.inversions if self.inversions else [0]
+        all_inverted = ["up", "down", "up-down", "down-up"] if self.invertible else ["NA"]
 
-        mandatory_params = (all_keys, all_intervals, all_inversions, all_invertibles)
+        mandatory_params = (all_keys, all_intervals, all_inversions, all_inverted)
 
-        return np.array(np.meshgrid(*mandatory_params)).reshape(-1, len(mandatory_params))
-
+        return [{
+            "key": combo[0],
+            "interval": combo[1],
+            "inversion": combo[2],
+            "inverted": combo[3]
+        } for combo in itertools.product(*mandatory_params)]
 
 
 class Routine:
@@ -117,6 +131,8 @@ class Routine:
 
         routine_config_name = f"{choice}.yaml"
         routine_state_rel_path = f"./routine_states/{choice}/state.json"
+
+        self.replacement = replacement
 
         if not os.path.exists(routine_state_rel_path):
             with open(routine_state_rel_path, "w", encoding="UTF-8") as routine_state_fp:
@@ -127,13 +143,40 @@ class Routine:
         self.routine_config = OmegaConf.to_container(exercises_hydra, resolve=True)
 
         self.exercises_templates = {
-            exercise_name: exercise_config for exercise_group_config in self.routine_config["exercises"].values() for exercise_name, exercise_config in exercise_group_config.items()
+            exercise_name: exercise_config 
+            for exercise_group_config in self.routine_config["exercises"].values() 
+            for exercise_name, exercise_config in exercise_group_config.items()
         }
 
         with open(routine_state_rel_path, "r", encoding="UTF-8") as routine_state_fp:
             self.state = json.load(routine_state_fp)
 
-        self.unpracticed_exercises_templates = ["hi"]
+        self.all_mandatory_exercises = self.list_all_mandatory_exercises()
+
+        self.unpracticed_exercises = [
+            exercise for exercise in self.all_mandatory_exercises
+            if exercise not in self.state
+        ]
+
+    def list_all_mandatory_exercises(self):
+        all_mandatory_exercises = []
+        for exercise_id in self.exercises_templates:
+            base_exercise = Exercise(**self.exercises_templates[exercise_id])
+            all_param_combos = base_exercise.list_all_mandatory_combinations()
+
+            all_mandatory_exercises += [{
+                "name": base_exercise.name,
+                "category": base_exercise.category,
+                "keyed_or_chromatic": base_exercise.keyed_or_chromatic,
+                "number_of_notes": base_exercise.number_of_notes,
+                "notes_per_beat": base_exercise.notes_per_beat,
+                "key": param_combo["key"],
+                "interval": param_combo["interval"],
+                "inversion": param_combo["inversion"],
+                "inverted": param_combo["inverted"],
+            } for param_combo in all_param_combos]
+
+        return all_mandatory_exercises
 
     def choose_exercise(self):
         return random.choice(list(self.exercises_templates.keys()))
@@ -148,22 +191,35 @@ class Routine:
         pass
 
     def run(self):
-        try:
-            while self.unpracticed_exercises:
-                exercise_id = self.choose_exercise()
-                exercise = Exercise(**self.exercises_templates[exercise_id])
+        if self.replacement:
+            try:
+                while self.unpracticed_exercises:
+                    exercise_id, rating = self.sample_display_exercise()
+                    if rating.isnumeric():
+                        rating = float(rating)
+                    else:
+                        rating = None
+                    self.update(exercise_id, rating)
 
-                print(exercise)
-                rating = input("Please press any key for the next exercise. Input a rating if you wish.")
-                if rating.isnumeric():
-                    rating = float(rating)
-                else:
-                    rating = None
-                self.update(exercise_id, rating)
+            except KeyboardInterrupt:
+                print("\n")
+                print("Routine finished for now! State updated.")
+                self.save_state()
+        else:
+            try:
+                while True:
+                    _ = self.sample_display_exercise()    
+            except KeyboardInterrupt:
+                print("\n")
+                print("Routine finished for now!")
 
-        except:
-            pass
+    def sample_display_exercise(self):
+        exercise_id = self.choose_exercise()
+        exercise = Exercise(**self.exercises_templates[exercise_id])
+        print(exercise)
+        self.list_all_mandatory_exercises()
+        import pdb
+        pdb.set_trace()
+        rating = input("Please press any key for the next exercise. Input a rating if you wish.\n")
 
-        self.save_state()
-
-    
+        return exercise_id, rating
