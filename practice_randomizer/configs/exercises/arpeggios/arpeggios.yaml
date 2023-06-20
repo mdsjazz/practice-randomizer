@@ -1,5 +1,6 @@
 "Major Triads 6-Note":
   name: "Major Triads 6-Note"
+  category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 6
   notes_per_beat: 4
@@ -9,6 +10,7 @@
 
 "Minor Triads 6-Note":
   name: "Minor Triads 6-Note"
+  category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 6
   notes_per_beat: 4
@@ -18,6 +20,7 @@
 
 "Diminished Triads 6-Note":
   name: "Diminished Triads 6-Note"
+  category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 6
   notes_per_beat: 4

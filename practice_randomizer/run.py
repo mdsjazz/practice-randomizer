@@ -7,19 +7,19 @@ from omegaconf import DictConfig
 sys.path.append(os.getcwd())
 
 from practice_randomizer.routines import Routine
+from practice_randomizer.utils import text_input_to_approx_true
 
 def run() -> None:
     routine_choice_input = input("What routine would you like to practice?\n")
     # Get table/db, check names
 
     sample_exercises_without_replacement = input("Would you like to have unique exercises?\n")
-    if sample_exercises_without_replacement in (1, True) or "y" in sample_exercises_without_replacement.lower():
-        # Logic to set routine
-        sample_exercises_without_replacement = True
-    else:
-        sample_exercises_without_replacement = False
+    reset = input("Would you like to reset the routine?\n")
 
-    routine = Routine(choice = routine_choice_input, replacement = sample_exercises_without_replacement)
+    sample_exercises_without_replacement = text_input_to_approx_true(sample_exercises_without_replacement)
+    reset = text_input_to_approx_true(reset)
+
+    routine = Routine(choice = routine_choice_input, replacement = sample_exercises_without_replacement, reset = reset)
     routine.run()
 
 

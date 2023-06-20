@@ -1,71 +1,71 @@
-"Major 2nds":
-  name: "Major 2nds"
+"Diatonic 2nds":
+  name: "Diatonic 2nds"
   category: scale intervals
   keyed_or_chromatic: keyed
-  key: A, Bb, B, C, Db, D, Eb, E, F, Gb, G
+  key: [A, Bb, B, C, Db, D, Eb, E, F, Gb, G]
   scale: diatonic
   number_of_notes: 2
   notes_per_beat: 4
   max_interval: 1
   invertible: True
-  scale_notes: 0, 2, 4, 5, 7, 9, 11
+  scale_notes: [0, 2, 4, 5, 7, 9, 11]
 
 "Melodic Minor 2nds":
   name: "Melodic Minor 2nds"
   category: scale intervals
   keyed_or_chromatic: keyed
-  key: A, Bb, B, C, C#, D, Eb, E, F, F#, G
-  scale: diatonic
+  key: [A, Bb, B, C, C#, D, Eb, E, F, F#, G]
+  scale: melodic minor
   number_of_notes: 2
   notes_per_beat: 4
   max_interval: 1
   invertible: True
-  scale_notes: 0, 2, 3, 5, 7, 9, 11
+  scale_notes: [0, 2, 3, 5, 7, 9, 11]
 
 "Harmonic Minor 2nds":
   name: "Harmonic Minor 2nds"
   category: scale intervals
   keyed_or_chromatic: keyed
-  key: A, Bb, B, C, C#, D, Eb, E, F, F#, G
-  scale: diatonic
+  key: [A, Bb, B, C, C#, D, Eb, E, F, F#, G]
+  scale: harmonic minor
   number_of_notes: 2
   notes_per_beat: 4
   max_interval: 1
   invertible: True
-  scale_notes: 0, 2, 3, 5, 7, 8, 11
+  scale_notes: [0, 2, 3, 5, 7, 8, 11]
 
-"Major 3rds":
-  name: "Major 3rds"
+"Diatonic 3rds":
+  name: "Diatonic 3rds"
   category: scale intervals
   keyed_or_chromatic: keyed
-  key: A, Bb, B, C, Db, D, Eb, E, F, Gb, G
+  key: [A, Bb, B, C, Db, D, Eb, E, F, Gb, G]
   scale: diatonic
   number_of_notes: 2
   notes_per_beat: 4
   max_interval: 1
   invertible: True
-  scale_notes: 0, 2, 4, 5, 7, 9, 11
+  scale_notes: [0, 2, 4, 5, 7, 9, 11]
 
 "Melodic Minor 3rds":
   name: "Melodic Minor 3rds"
   category: scale intervals
   keyed_or_chromatic: keyed
-  key: A, Bb, B, C, C#, D, Eb, E, F, F#, G
-  scale: diatonic
+  key: [A, Bb, B, C, C#, D, Eb, E, F, F#, G]
+  scale: melodic minor
   number_of_notes: 2
   notes_per_beat: 4
   max_interval: 1
   invertible: True
-  scale_notes: 0, 2, 3, 5, 7, 9, 11
+  scale_notes: [0, 2, 3, 5, 7, 9, 11]
 
 "Harmonic Minor 3rds":
   name: "Harmonic Minor 3rds"
   category: scale intervals
   keyed_or_chromatic: keyed
-  key: A, Bb, B, C, C#, D, Eb, E, F, F#, G
-  scale: diatonic
+  key: [A, Bb, B, C, C#, D, Eb, E, F, F#, G]
+  scale: harmonic minor
   number_of_notes: 2
   notes_per_beat: 4
   max_interval: 1
   invertible: True
-  scale_notes: 0, 2, 3, 5, 7, 8, 11
+  scale_notes: [0, 2, 3, 5, 7, 8, 11]

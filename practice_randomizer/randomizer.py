@@ -17,7 +17,7 @@ def randomize_starting_note(keyed_or_chromatic: str = "chromatic", key: list = N
     register = ""
     note_name = ""
 
-    if keyed_or_chromatic == "key":
+    if keyed_or_chromatic == "keyed":
         key_int = NOTE_TO_INT_MAP[key]
 
         key_scale_notes_ints_full_range = [
@@ -78,5 +78,5 @@ def randomize_inversion(inversions: List = None) -> int:
 
 # In an up, down, up-down, down-up fashion, randomize all possible inversion patterns
 # (must cover all)
-def randomize_inverted(invertible: bool = False) -> bool:
+def randomize_invert_pattern(invertible: bool = False) -> bool:
     return random.choice(["Up", "Down", "Up-Down", "Down-Up"]) if invertible else None
