@@ -201,7 +201,8 @@ class Routine:
     def __init__(self, choice: str, replacement: bool = False, reset: bool = False):
 
         routine_config_name = f"{choice}.yaml"
-        self.routine_state_rel_path = f"./routine_states/{choice}/state.json"
+        self.routine_state_dir_rel_path = f"./routine_states/{choice}"
+        self.routine_state_rel_path = f"{self.routine_state_dir_rel_path}/state.json"
 
         self.replacement = replacement
 
@@ -285,6 +286,9 @@ class Routine:
     def save_state(self, save_object: dict = None):
         if not save_object:
             save_object = {}
+
+        if not os.path.exists(self.routine_state_dir_rel_path):
+            os.makedirs(self.routine_state_dir_rel_path)
 
         with open(self.routine_state_rel_path, "w", encoding="UTF-8") as routine_state_fp:
             json.dump(save_object, routine_state_fp, indent=4)

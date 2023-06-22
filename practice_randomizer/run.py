@@ -5,11 +5,13 @@ import hydra
 from omegaconf import DictConfig
 
 sys.path.append(os.getcwd())
+sys.path.append("/Users/mikey/Personal/Programming and Development/Miscellaneous Projects/practice-randomizer")
 
 from practice_randomizer.routines import Routine
 from practice_randomizer.utils import text_input_to_approx_true
 
 def run() -> None:
+    print()
     routine_choice_input = input("What routine would you like to practice?\n")
     # Get table/db, check names
 
