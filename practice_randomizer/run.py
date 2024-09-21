@@ -13,10 +13,16 @@ from practice_randomizer.utils import text_input_to_approx_true
 def run() -> None:
     print()
     routine_choice_input = input("What routine would you like to practice?\n")
+    if not routine_choice_input:
+        routine_choice_input = "basic"
     # Get table/db, check names
 
     sample_exercises_without_replacement = input("Would you like to have unique exercises?\n")
+    if not sample_exercises_without_replacement:
+        sample_exercises_without_replacement = "yes"
     reset = input("Would you like to reset the routine?\n")
+    if not reset:
+        reset = "no"
 
     sample_exercises_without_replacement = text_input_to_approx_true(sample_exercises_without_replacement)
     reset = text_input_to_approx_true(reset)

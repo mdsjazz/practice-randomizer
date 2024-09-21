@@ -20,7 +20,7 @@ from practice_randomizer.randomizer import (
 )
 from practice_randomizer.utils import text_input_to_approx_true
 
-ROUTINES_PATH = "/Users/mikey/Personal/Programming and Development/Miscellaneous Projects/practice-randomizer/routines"
+ROUTINE_STATE_PATH = "/Users/mikey/Personal/Programming and Development/Miscellaneous Projects/practice-randomizer/routine_states"
 
 
 class Exercise:
@@ -184,7 +184,7 @@ class ExerciseTemplate:
         all_keys = list(NOTE_TO_INT_MAP.keys()) if self.keyed_or_chromatic == "keyed" else [None]
         all_intervals = list(range(1, self.max_interval + 1))
         all_inversions = self.inversions if self.inversions else [None]
-        all_invert_patterns = ["up", "down", "up-down", "down-up"] if self.invertible else [None]
+        all_invert_patterns = ["up", "down", "up-down", "down-up", "in-direction", "opposite"] if self.invertible else [None]
 
         mandatory_params = (all_keys, all_intervals, all_inversions, all_invert_patterns)
 
@@ -201,7 +201,7 @@ class Routine:
     def __init__(self, choice: str, replacement: bool = False, reset: bool = False):
 
         routine_config_name = f"{choice}.yaml"
-        self.routine_state_dir_rel_path = f"./routine_states/{choice}"
+        self.routine_state_dir_rel_path = f"{ROUTINE_STATE_PATH}/{choice}"
         self.routine_state_rel_path = f"{self.routine_state_dir_rel_path}/state.json"
 
         self.replacement = replacement

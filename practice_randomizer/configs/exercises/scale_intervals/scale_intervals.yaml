@@ -34,6 +34,72 @@
   invertible: True
   scale_notes: [0, 2, 3, 5, 7, 8, 11]
 
+"Diminished 2nds":
+  name: "Diminished"
+  category: scale intervals
+  keyed_or_chromatic: keyed
+  key: [Bb, B, C]
+  scale: diminished
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 1
+  invertible: True
+  scale_notes: [0, 2, 3, 5, 6, 8, 9, 11]
+
+"Whole-Tone 2nds":
+  name: "Whole-Tone"
+  category: scales
+  keyed_or_chromatic: keyed
+  key: [Bb, B]
+  scale: whole tone
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 1
+  invertible: False
+  scale_notes: [0, 2, 4, 6, 8, 10]
+
+
+"Pentatonic 2nds":
+  name: "Pentatonic"
+  category: scales
+  keyed_or_chromatic: keyed
+  key: [Ab, A, Bb, B, C, C#, D, Eb, E, F, F#, G]
+  scale: Pentatonic
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 1
+  invertible: False
+  scale_notes: [0, 2, 4, 7, 9]
+
+"Japanese 2nds":
+  name: "Japanese"
+  category: scales
+  keyed_or_chromatic: keyed
+  key: [Ab, A, Bb, B, C, C#, D, Eb, E, F, F#, G]
+  scale: japanese
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 1
+  invertible: False
+  scale_notes: [0, 1, 5, 7, 8]
+
+"Blues Scale 2nds":
+  name: "Blues Scale"
+  category: scales
+  keyed_or_chromatic: keyed
+  key: [Ab, A, Bb, B, C, C#, D, Eb, E, F, F#, G]
+  scale: blues
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 1
+  invertible: False
+  scale_notes: [0, 3, 5, 6, 7, 10]
+
+
+
+
+
+
 "Diatonic 3rds":
   name: "Diatonic 3rds"
   category: scale intervals
@@ -69,3 +135,63 @@
   max_interval: 1
   invertible: True
   scale_notes: [0, 2, 3, 5, 7, 8, 11]
+
+"Diminished 3rds":
+  name: "Diminished"
+  category: scale intervals
+  keyed_or_chromatic: keyed
+  key: [Bb, B, C]
+  scale: diminished
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 1
+  invertible: True
+  scale_notes: [0, 2, 3, 5, 6, 8, 9, 11]
+
+"Whole-Tone 3rds":
+  name: "Whole-Tone"
+  category: scales
+  keyed_or_chromatic: keyed
+  key: [Bb, B]
+  scale: whole tone
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 1
+  invertible: False
+  scale_notes: [0, 2, 4, 6, 8, 10]
+
+"Pentatonic 3rds":
+  name: "Pentatonic"
+  category: scales
+  keyed_or_chromatic: keyed
+  key: [Ab, A, Bb, B, C, C#, D, Eb, E, F, F#, G]
+  scale: Pentatonic
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 1
+  invertible: False
+  scale_notes: [0, 2, 4, 7, 9]
+
+"Japanese 3rds":
+  name: "Japanese"
+  category: scales
+  keyed_or_chromatic: keyed
+  key: [Ab, A, Bb, B, C, C#, D, Eb, E, F, F#, G]
+  scale: japanese
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 1
+  invertible: False
+  scale_notes: [0, 1, 5, 7, 8]
+
+"Blues Scale 3rds":
+  name: "Blues Scale"
+  category: scales
+  keyed_or_chromatic: keyed
+  key: [Ab, A, Bb, B, C, C#, D, Eb, E, F, F#, G]
+  scale: blues
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 1
+  invertible: False
+  scale_notes: [0, 3, 5, 6, 7, 10]

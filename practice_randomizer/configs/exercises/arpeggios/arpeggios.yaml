@@ -1,5 +1,187 @@
-"Major Triads 6-Note":
-  name: "Major Triads 6-Note"
+####################### Basic Arpeggios ##########################
+
+"Major Triads: 1-3-5":
+  name: "Major Triads: 1-3-5"
+  category: arpeggios
+  keyed_or_chromatic: chromatic
+  number_of_notes: 3
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2]
+  invertible: True
+
+"Minor Triads: 1-b3-5":
+  name: "Minor Triads: 1-b3-5"
+  category: arpeggios
+  keyed_or_chromatic: chromatic
+  number_of_notes: 3
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2]
+  invertible: True
+
+"Diminished Triads: 1-b3-b5":
+  name: "Diminished Triads: 1-b3-b5"
+  category: arpeggios
+  keyed_or_chromatic: chromatic
+  number_of_notes: 3
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2]
+  invertible: True
+
+"Augmented Triads: 1-3-#5":
+  name: "Augmented Triads: 1-3-#5"
+  category: arpeggios
+  keyed_or_chromatic: chromatic
+  number_of_notes: 3
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2]
+  invertible: True
+
+"Suspended Triads: 1-4-5":
+  name: "Suspended Triads: 1-4-5"
+  category: arpeggios
+  keyed_or_chromatic: chromatic
+  number_of_notes: 3
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2]
+  invertible: True
+
+"Major 5b Triads: 1-3-b5":
+  name: "Major b5 Triads: 1-3-b5"
+  category: arpeggios
+  keyed_or_chromatic: chromatic
+  number_of_notes: 3
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2]
+  invertible: True
+
+######## 7ths Chords #########
+
+
+"Major 7ths":
+  name: "Major 7ths"
+  category: arpeggios
+  keyed_or_chromatic: chromatic
+  number_of_notes: 4
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertible: True
+
+"Major 7ths b5":
+  name: "Major 7ths b5"
+  category: arpeggios
+  keyed_or_chromatic: chromatic
+  number_of_notes: 4
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertible: True
+
+"Augmented Major 7ths":
+  name: "Augmented Major 7ths"
+  category: arpeggios
+  keyed_or_chromatic: chromatic
+  number_of_notes: 4
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertible: True
+
+## 7th
+"7ths":
+  name: "7ths"
+  category: arpeggios
+  keyed_or_chromatic: chromatic
+  number_of_notes: 4
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertible: True
+
+"7ths b5":
+  name: "7ths b5"
+  category: arpeggios
+  keyed_or_chromatic: chromatic
+  number_of_notes: 4
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertible: True
+
+"7ths #5":
+  name: "7ths #5"
+  category: arpeggios
+  keyed_or_chromatic: chromatic
+  number_of_notes: 4
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertible: True
+
+# Minor
+"Minor 7ths":
+  name: "Minor 7ths"
+  category: arpeggios
+  keyed_or_chromatic: chromatic
+  number_of_notes: 4
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertible: True
+
+"Minor Major 7ths":
+  name: "Minor Major 7ths"
+  category: arpeggios
+  keyed_or_chromatic: chromatic
+  number_of_notes: 4
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertible: True
+
+# Diminished
+"Diminished 7ths":
+  name: "Diminished 7ths"
+  category: arpeggios
+  keyed_or_chromatic: chromatic
+  number_of_notes: 4
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertible: True
+
+"Diminished Major 7ths":
+  name: "Diminished 7ths"
+  category: arpeggios
+  keyed_or_chromatic: chromatic
+  number_of_notes: 4
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertible: True
+
+# Suspended
+"Suspended 7ths":
+  name: "Suspended 7ths"
+  category: arpeggios
+  keyed_or_chromatic: chromatic
+  number_of_notes: 4
+  notes_per_beat: 4
+  max_interval: 1
+  inversions: [0, 1, 2, 3]
+  invertible: True
+
+
+########################## Dann-esque arpeggios ###################
+
+"Major 6-Note: 1-3-5-3-1-3":
+  name: "Major 6-Note: 1-3-5-3-1-3"
   category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 6
@@ -8,8 +190,8 @@
   inversions: [0, 1, 2]
   invertible: True
 
-"Minor Triads 6-Note":
-  name: "Minor Triads 6-Note"
+"Minor 6-Note: 1-b3-5-b3-1-b3":
+  name: "Minor 6-Note: 1-b3-5-b3-1-b3"
   category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 6
@@ -18,8 +200,8 @@
   inversions: [0, 1, 2]
   invertible: True
 
-"Diminished Triads 6-Note":
-  name: "Diminished Triads 6-Note"
+"Diminished 6-Note: 1-b3-b5-b3-1-b3":
+  name: "Diminished 6-Note: 1-b3-b5-b3-1-b3"
   category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 6
@@ -29,8 +211,8 @@
   invertible: True
 
 
-"Augmented Triads 6-Note":
-  name: "Augmented Triads 6-Note"
+"Augmented 6-Note: 1-3-#5-3-1-3":
+  name: "Augmented 6-Note: 1-3-#5-3-1-3"
   category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 6
@@ -39,8 +221,8 @@
   inversions: [0, 1, 2]
   invertible: True
 
-"Suspended Triads 6-Note":
-  name: "Suspended Triads 6-Note"
+"Suspended 6-Note: 1-4-5-4-1-4":
+  name: "Suspended 6-Note: 1-4-5-4-1-4"
   category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 6
@@ -49,8 +231,8 @@
   inversions: [0, 1, 2]
   invertible: True
 
-"Major 5b Triads 6-Note":
-  name: "Major 5b Triads 6-Note"
+"Major 5b 6-Note: 1-3-b5-3-1-3":
+  name: "Major 5b 6-Note: 1-3-b5-3-1-3"
   category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 6
@@ -62,8 +244,8 @@
 ## 7th chords:
 
 ## Major
-"Major 7ths 8-Note":
-  name: "Major 7ths 8-Note"
+"Major 7ths 8-Note: 1-3-5-7-5-3-1-3":
+  name: "Major 7ths 8-Note: 1-3-5-7-5-3-1-3"
   category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
@@ -72,8 +254,8 @@
   inversions: [0, 1, 2, 3]
   invertible: True
 
-"Major 7ths b5 8-Note":
-  name: "Major 7ths b5 8-Note"
+"Major 7ths b5 8-Note: 1-3-b5-7-b5-3-1-3":
+  name: "Major 7ths b5 8-Note: 1-3-b5-7-b5-3-1-3"
   category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
@@ -82,8 +264,8 @@
   inversions: [0, 1, 2, 3]
   invertible: True
 
-"Augmented Major 7ths 8-Note":
-  name: "Augmented Major 7ths 8-Note"
+"Augmented Major 7ths 8-Note: 1-3-#5-7-#5-3-1-3":
+  name: "Augmented Major 7ths 8-Note: 1-3-#5-7-#5-3-1-3"
   category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
@@ -93,8 +275,8 @@
   invertible: True
 
 ## 7th
-"7ths 8-Note":
-  name: "7ths 8-Note"
+"7ths 8-Note: 1-3-5-b7-5-3-1-3":
+  name: "7ths 8-Note: 1-3-5-b7-5-3-1-3"
   category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
@@ -103,8 +285,8 @@
   inversions: [0, 1, 2, 3]
   invertible: True
 
-"7ths b5 8-Note":
-  name: "7ths b5 8-Note"
+"7ths b5 8-Note: 1-3-b5-b7-b5-3-1-3":
+  name: "7ths b5 8-Note: 1-3-b5-b7-b5-3-1-3"
   category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
@@ -113,8 +295,8 @@
   inversions: [0, 1, 2, 3]
   invertible: True
 
-"7ths #5 8-Note":
-  name: "7ths #5 8-Note"
+"7ths #5 8-Note: 1-3-#5-b7-#5-3-1-3":
+  name: "7ths #5 8-Note: 1-3-#5-b7-#5-3-1-3"
   category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
@@ -124,8 +306,8 @@
   invertible: True
 
 # Minor
-"Minor 7ths 8-Note":
-  name: "Minor 7ths 8-Note"
+"Minor 7ths 8-Note: 1-b3-5-b7-5-b3-1-b3":
+  name: "Minor 7ths 8-Note: 1-b3-5-b7-5-b3-1-b3"
   category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
@@ -134,8 +316,8 @@
   inversions: [0, 1, 2, 3]
   invertible: True
 
-"Minor Major 7ths 8-Note":
-  name: "Minor Major 7ths 8-Note"
+"Minor Major 7ths 8-Note: 1-b3-5-7-5-b3-1-b3":
+  name: "Minor Major 7ths 8-Note: 1-b3-5-7-5-b3-1-b3"
   category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
@@ -145,8 +327,8 @@
   invertible: True
 
 # Diminished
-"Diminished 7ths 8-Note":
-  name: "Diminished 7ths 8-Note"
+"Diminished 7ths 8-Note: 1-b3-b5-bb7-b5-b3-1-b3":
+  name: "Diminished 7ths 8-Note: 1-b3-b5-bb7-b5-b3-1-b3"
   category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
@@ -155,8 +337,8 @@
   inversions: [0, 1, 2, 3]
   invertible: True
 
-"Diminished Major 7ths 8-Note":
-  name: "Diminished 7ths 8-Note"
+"Diminished Major 7ths 8-Note: 1-b3-b5-7-b5-b3-1-b3":
+  name: "Diminished 7ths 8-Note: 1-b3-b5-7-b5-b3-1-b3"
   category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
@@ -166,8 +348,8 @@
   invertible: True
 
 # Suspended
-"Suspended 7ths 8-Note":
-  name: "Suspended 7ths 8-Note"
+"Suspended 7ths 8-Note: 1-4-5-b7-5-4-1-4":
+  name: "Suspended 7ths 8-Note: 1-4-5-b7-5-4-1-4"
   category: arpeggios
   keyed_or_chromatic: chromatic
   number_of_notes: 8
@@ -176,3 +358,5 @@
   inversions: [0, 1, 2, 3]
   invertible: True
 
+
+######################## Combo Interval Arpeggios ############################
