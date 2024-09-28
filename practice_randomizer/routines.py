@@ -1,6 +1,7 @@
 import itertools
 import json
 import os
+from pydantic import BaseModel, RootValidator
 import random
 from typing import List
 
@@ -21,6 +22,22 @@ from practice_randomizer.randomizer import (
 from practice_randomizer.utils import text_input_to_approx_true
 
 ROUTINE_STATE_PATH = "/Users/mikey/Personal/Programming and Development/Miscellaneous Projects/practice-randomizer/routine_states"
+
+@dataclass
+class Exercise(BaseModel):
+    name: str = ""
+    category: str = ""
+    keyed_or_chromatic: Optional[str] = None
+    key: str = None
+    scale_notes: Optional[List] = None
+    starting_note: Optional[str] = None
+
+@dataclass
+class KeyedExercise(Exercise):
+    keyed_or_chromatic: str = "keyed"
+    key: str = ""
+    scale_notes: List[str] = 
+    
 
 
 class Exercise:
