@@ -7,6 +7,7 @@ from typing import Any, List, Optional
 
 from hydra import compose, initialize
 from omegaconf import DictConfig, OmegaConf
+from practice_randomizer.constants import *
 
 from practice_randomizer.randomizer import (
     NOTE_TO_INT_MAP,
@@ -21,7 +22,7 @@ from practice_randomizer.randomizer import (
 )
 from practice_randomizer.utils import text_input_to_approx_true
 
-ROUTINE_STATE_PATH = "/Users/mikey/Personal/Programming and Development/Miscellaneous Projects/practice-randomizer/routine_states"
+ROUTINE_STATE_PATH = f"{PRACTICE_RANDOMIZER_PATH}/routine_states"
 
 class Exercise(BaseModel):
     name: str = ""
@@ -110,90 +111,6 @@ class KeyedExercise(Exercise):
     keyed_or_chromatic: str = "keyed"
     key: str
     
-
-
-#class Exercise:
-#
-#    def __init__(
-#        self,
-#        name: str = "",
-#        category: str = "",
-#        keyed_or_chromatic: str = None,
-#        key: str = None,
-#        scale_notes: List = None,
-#        starting_note: str = None,
-#        number_of_notes: int = None,
-#        notes_per_beat: int = None,
-#        displacement: int = None,
-#        offset: int = None,
-#        interval: int = None,
-#        inversion: int = None,
-#        invert_pattern: str = None,
-#        articulation: List = None,
-#    ):
-#
-#        self.name = name
-#        self.category = category
-#        self.keyed_or_chromatic = keyed_or_chromatic
-#        self.key = key
-#        self.starting_note = starting_note if starting_note else randomize_starting_note(keyed_or_chromatic=keyed_or_chromatic, key=key, scale_notes=scale_notes)
-#
-#        self.notes_per_beat = notes_per_beat
-#        self.displacement = displacement if displacement else randomize_displacement(number_of_notes=number_of_notes)
-#        self.offset = offset if offset else randomize_offset(notes_per_beat=notes_per_beat)
-#
-#        self.interval = interval
-#        self.inversion = inversion
-#        self.invert_pattern = invert_pattern
-#
-#        self.articulation = articulation if articulation else randomize_articulation(notes_per_beat=notes_per_beat)
-#
-#
-#    def __str__(self):
-#        exercise_str =  f"""
-#        {self.category}:
-#            {self.name},
-#        """
-#        if self.key:
-#            exercise_str += f"""
-#            key: {self.key},"""
-#
-#        exercise_str += f"""
-#            start on {self.starting_note},
-#            displace by {self.displacement},
-#            offset by {self.offset},
-#            {self.notes_per_beat} notes per beat,
-#            articulate as {self.articulation},
-#            in intervals of {self.interval}"""
-#
-#        if self.inversion:
-#            exercise_str += f""",
-#            inversion {self.inversion}"""
-#        if self.invert_pattern:
-#            exercise_str += f""",
-#            {self.invert_pattern}"""
-#        exercise_str += "\n"
-#        return exercise_str
-#
-#    def __repr__(self):
-#        return self.__str__()
-#
-#    def get_mandatory_exercise_params_form(self):
-#        return {
-#            "name": self.name,
-#            "category": self.category,
-#            "key": self.key,
-#            "notes_per_beat": self.notes_per_beat,
-#            "interval": self.interval,
-#            "inversion": self.inversion,
-#            "invert_pattern": self.invert_pattern,
-#        }
-#
-#    def get_ustrid(self):
-#        exercise_str = str(list(self.get_mandatory_exercise_params_form().values()))
-#        return exercise_str
-
-
 
 class ExerciseTemplate:
 
