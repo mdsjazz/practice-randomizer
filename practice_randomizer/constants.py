@@ -1,0 +1,3 @@
+import practice_randomizer
+
+PRACTICE_RANDOMIZER_PATH = practice_randomizer.__path__
