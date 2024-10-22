@@ -20,14 +20,91 @@ from practice_randomizer.randomizer import (
     randomize_inversion,
     randomize_invert_pattern,
 )
-from practice_randomizer.utils import text_input_to_approx_true
+from practice_randomizer.utils import text_input_to_approximate_truth
 
 ROUTINE_STATE_PATH = f"{PRACTICE_RANDOMIZER_PATH}/routine_states"
+
+
+class ExerciseTemplate(BaseModel):
+
+    name: str = ""
+    category: str = ""
+    keyed_or_chromatic: str
+    scale_notes: Optional[List] = None
+    number_of_notes: int
+    notes_per_beat: int
+    max_interval: int
+    inversions: List = None
+    invertible: bool = False
+
+    def return_randomized_exercise(
+        self,
+        keyed_or_chromatic: bool = None,
+        number_of_notes: int = None,
+        notes_per_beat: int = None,
+        max_interval: int = None,
+        inversions: List = None,
+        invertible: bool = None,
+    ):
+
+        if keyed_or_chromatic is None:
+            keyed_or_chromatic = self.keyed_or_chromatic
+        if number_of_notes is None:
+            number_of_notes = self.number_of_notes
+        if notes_per_beat is None:
+            notes_per_beat = self.notes_per_beat
+        if max_interval is None:
+            max_interval = self.max_interval
+        if inversions is None:
+            inversions = self.inversions
+        if invertible is None:
+            invertible = self.invertible
+
+        key = randomize_key() if keyed_or_chromatic else None
+        starting_note = randomize_starting_note(keyed_or_chromatic=keyed_or_chromatic)
+        interval = randomize_interval(max_interval=max_interval)
+        displacement = randomize_displacement(number_of_notes=number_of_notes)
+        offset = randomize_offset(notes_per_beat=notes_per_beat)
+        articulation = randomize_articulation(notes_per_beat=notes_per_beat)
+        inversion = randomize_inversion(inversions=inversions)
+        invert_pattern = randomize_invert_pattern(invertible=invertible)
+
+        return Exercise(
+            name=self.name,
+            category=self.category,
+            keyed_or_chromatic=self.keyed_or_chromatic,
+            key=key,
+            scale_notes=self.scale_notes,
+            starting_note=starting_note,
+            notes_per_beat=self.notes_per_beat,
+            displacement=displacement,
+            offset=offset,
+            interval=interval,
+            inversion=inversion,
+            invert_pattern=invert_pattern,
+            articulation=articulation,
+        )
+
+    def list_all_mandatory_combinations(self):
+        all_keys = list(NOTE_TO_INT_MAP.keys()) if self.keyed_or_chromatic == "keyed" else [None]
+        all_intervals = list(range(1, self.max_interval + 1))
+        all_inversions = self.inversions if self.inversions else [None]
+        all_invert_patterns = ["up", "down", "up-down", "down-up", "in-direction", "opposite"] if self.invertible else [None]
+
+        mandatory_params = (all_keys, all_intervals, all_inversions, all_invert_patterns)
+
+        return [{
+            "key": combo[0],
+            "interval": combo[1],
+            "inversion": combo[2],
+            "invert_pattern": combo[3]
+        } for combo in itertools.product(*mandatory_params)]
+
 
 class Exercise(BaseModel):
     name: str = ""
     category: str = ""
-    keyed_or_chromatic: Optional[str] = None
+    keyed_or_chromatic: str = None
     key: Optional[str] = None
     scale_notes: Optional[List] = None
     starting_note: Optional[str] = None
@@ -35,9 +112,9 @@ class Exercise(BaseModel):
     notes_per_beat: int
     displacement: Optional[int] = None
     offset: Optional[int] = None
-    interval: Optional[int] = None
-    inversion: Optional[int] = None
-    invert_pattern: Optional[str] = None
+    interval: int
+    inversion: int
+    invert_pattern: str
     articulation: Optional[List[int]] = None
 
     def __new__(cls, **kwargs):
@@ -111,96 +188,6 @@ class KeyedExercise(Exercise):
     keyed_or_chromatic: str = "keyed"
     key: str
     
-
-class ExerciseTemplate:
-
-    def __init__(
-        self,
-        name: str = "",
-        category: str = "",
-        keyed_or_chromatic: str = "chromatic",
-        scale_notes: List = None,
-        number_of_notes: int = 0,
-        notes_per_beat: int = 0,
-        max_interval: int = 1,
-        inversions: List = None,
-        invertible: bool = False,
-        **kwargs
-    ):
-
-        self.name = name
-        self.category = category
-        self.keyed_or_chromatic = keyed_or_chromatic
-        self.scale_notes = scale_notes
-        self.number_of_notes = number_of_notes
-        self.notes_per_beat = notes_per_beat
-        self.max_interval = max_interval
-        self.inversions = inversions
-        self.invertible = invertible
-
-    def return_randomized_exercise(
-        self,
-        keyed_or_chromatic: bool = None,
-        number_of_notes: int = None,
-        notes_per_beat: int = None,
-        max_interval: int = None,
-        inversions: List = None,
-        invertible: bool = None,
-    ):
-
-        if keyed_or_chromatic is None:
-            keyed_or_chromatic = self.keyed_or_chromatic
-        if number_of_notes is None:
-            number_of_notes = self.number_of_notes
-        if notes_per_beat is None:
-            notes_per_beat = self.notes_per_beat
-        if max_interval is None:
-            max_interval = self.max_interval
-        if inversions is None:
-            inversions = self.inversions
-        if invertible is None:
-            invertible = self.invertible
-
-        key = randomize_key() if keyed_or_chromatic else None
-        starting_note = randomize_starting_note(keyed_or_chromatic=keyed_or_chromatic)
-        interval = randomize_interval(max_interval=max_interval)
-        displacement = randomize_displacement(number_of_notes=number_of_notes)
-        offset = randomize_offset(notes_per_beat=notes_per_beat)
-        articulation = randomize_articulation(notes_per_beat=notes_per_beat)
-        inversion = randomize_inversion(inversions=inversions)
-        invert_pattern = randomize_invert_pattern(invertible=invertible)
-
-        return Exercise(
-            name=self.name,
-            category=self.category,
-            keyed_or_chromatic=self.keyed_or_chromatic,
-            key=key,
-            scale_notes=self.scale_notes,
-            starting_note=starting_note,
-            notes_per_beat=self.notes_per_beat,
-            displacement=displacement,
-            offset=offset,
-            interval=interval,
-            inversion=inversion,
-            invert_pattern=invert_pattern,
-            articulation=articulation
-        )
-
-    def list_all_mandatory_combinations(self):
-        all_keys = list(NOTE_TO_INT_MAP.keys()) if self.keyed_or_chromatic == "keyed" else [None]
-        all_intervals = list(range(1, self.max_interval + 1))
-        all_inversions = self.inversions if self.inversions else [None]
-        all_invert_patterns = ["up", "down", "up-down", "down-up", "in-direction", "opposite"] if self.invertible else [None]
-
-        mandatory_params = (all_keys, all_intervals, all_inversions, all_invert_patterns)
-
-        return [{
-            "key": combo[0],
-            "interval": combo[1],
-            "inversion": combo[2],
-            "invert_pattern": combo[3]
-        } for combo in itertools.product(*mandatory_params)]
-
 
 class Routine:
 
@@ -318,7 +305,7 @@ class Routine:
 
                     if not self.unpracticed_exercises:
                         restart = input("Routine finished! Would you like to restart?")
-                        restart = text_input_to_approx_true(restart)
+                        restart = text_input_to_approximate_truth(restart)
                         if restart:
                             self.restart_state()
 

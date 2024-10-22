@@ -8,7 +8,7 @@ sys.path.append(os.getcwd())
 sys.path.append("/Users/mikey/Personal/Programming and Development/Miscellaneous Projects/practice-randomizer")
 
 from practice_randomizer.routines import Routine
-from practice_randomizer.utils import text_input_to_approx_true
+from practice_randomizer.utils import text_input_to_approximate_truth
 
 def run() -> None:
     print()
@@ -24,8 +24,8 @@ def run() -> None:
     if not reset:
         reset = "no"
 
-    sample_exercises_without_replacement = text_input_to_approx_true(sample_exercises_without_replacement)
-    reset = text_input_to_approx_true(reset)
+    sample_exercises_without_replacement = text_input_to_approximate_truth(sample_exercises_without_replacement)
+    reset = text_input_to_approximate_truth(reset)
 
     routine = Routine(choice = routine_choice_input, replacement = sample_exercises_without_replacement, reset = reset)
     routine.run()
