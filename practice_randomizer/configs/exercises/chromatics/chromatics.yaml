@@ -4,7 +4,7 @@
   keyed_or_chromatic: chromatic
   number_of_notes: 2
   notes_per_beat: 4
-  max_interval: 1
+  max_interval: 12
   invertible: True
 
 "Chromatic Triplets":
@@ -12,8 +12,8 @@
   category: chromatics
   keyed_or_chromatic: chromatic
   number_of_notes: 3
-  notes_per_beat: 3
-  max_interval: 1
+  notes_per_beat: 4
+  max_interval: 12
   invertible: True
 
 # Very similar to chromatic quadruplets, just with last two notes inverted
@@ -23,7 +23,7 @@
   keyed_or_chromatic: chromatic
   number_of_notes: 4
   notes_per_beat: 4
-  max_interval: 1
+  max_interval: 12
   invertible: False
 
 # Very similar to chromatic quadruplets, just with last two notes inverted
@@ -33,7 +33,98 @@
   keyed_or_chromatic: chromatic
   number_of_notes: 2
   notes_per_beat: 4
-  max_interval: 1
+  max_interval: 12
   invertible: True
 
 # Eventually get minor 3rds, major 3rds, 4ths, tritones, 5ths, minor 6ths, major 6ths, minor 7ths, major 7ths, octaves, etc.
+
+"Minor 3rds":
+  name: "Minor 3rds"
+  category: chromatics
+  keyed_or_chromatic: chromatic
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 12
+  invertible: True
+
+"Major 3rds":
+  name: "Major 3rds"
+  category: chromatics
+  keyed_or_chromatic: chromatic
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 12
+  invertible: True
+
+"Perfect 4ths":
+  name: "Perfect 4ths"
+  category: chromatics
+  keyed_or_chromatic: chromatic
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 12
+  invertible: True
+
+"Tritones":
+  name: "Tritones"
+  category: chromatics
+  keyed_or_chromatic: chromatic
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 12
+  invertible: True
+
+"Perfect 5ths":
+  name: "Perfect 5ths"
+  category: chromatics
+  keyed_or_chromatic: chromatic
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 12
+  invertible: True
+
+"Minor 6ths":
+  name: "Minor 6ths"
+  category: chromatics
+  keyed_or_chromatic: chromatic
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 12
+  invertible: True
+
+"Major 6ths":
+  name: "Major 6ths"
+  category: chromatics
+  keyed_or_chromatic: chromatic
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 12
+  invertible: True
+
+"Minor 7ths":
+  name: "Minor 7ths"
+  category: chromatics
+  keyed_or_chromatic: chromatic
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 12
+  invertible: True
+
+"Major 7ths":
+  name: "Major 7ths"
+  category: chromatics
+  keyed_or_chromatic: chromatic
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 12
+  invertible: True
+
+"Octaves":
+  name: "Octaves"
+  category: chromatics
+  keyed_or_chromatic: chromatic
+  number_of_notes: 2
+  notes_per_beat: 4
+  max_interval: 12
+  invertible: True
+
