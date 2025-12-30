@@ -1,0 +1,5 @@
+# @package _global_
+defaults:
+  - _self_
+  - exercises/scale_intervals: scale_intervals.yaml
+  - exercises/scales: scales.yaml
