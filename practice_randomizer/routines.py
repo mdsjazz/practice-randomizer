@@ -1,3 +1,4 @@
+from enum import Enum
 import itertools
 import json
 import os
@@ -25,12 +26,17 @@ from practice_randomizer.utils import text_input_to_approximate_truth
 ROUTINE_STATE_PATH = f"{PRACTICE_RANDOMIZER_PATH}/routine_states"
 
 
+class KeyedOrChromatic(str, Enum):
+    KEYED = "keyed"
+    CHROMATIC = "chromatic"
+    
+
 class ExerciseTemplate(BaseModel):
 
-    name: str = ""
-    category: str = ""
-    keyed_or_chromatic: str
-    scale_notes: Optional[List] = None
+    name: str
+    category: str
+    keyed_or_chromatic: Union[Literal, str]
+    scale_notes: Optional[List]
     number_of_notes: int
     notes_per_beat: int
     max_interval: int
@@ -185,9 +191,13 @@ class Exercise(BaseModel):
 
 
 class KeyedExercise(Exercise):
-    keyed_or_chromatic: str = "keyed"
+    keyed_or_chromatic: Union[Literal, str] = KeyedOrChromatic.KEYED.value
     key: str
     
+
+class ChromaticExercise(Exercise):
+    keyed_or_chromatic: Union[Literal, str] = KeyedOrChromatic.CHROMATIC.value
+
 
 class Routine:
 
